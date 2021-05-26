@@ -8,7 +8,6 @@ public class ticTacToe {
     public static Scanner sc = new Scanner(System.in);
     public static char [] [] map;
     public static final int  SIZE = 3;
-    public static final char DOT_TO_WIN = 3;
     public static final char DOT_EMPTY = '*';
     public static final char DOT_X = 'X';
     public static final char DOT_O = 'O';
@@ -60,9 +59,7 @@ public class ticTacToe {
         for (int i = 0; i < SIZE ; i++) {
             for (int j = 0; j < SIZE; j++) {
                 map[i][j] = DOT_EMPTY;
-                System.out.print(map [i] [j] + " ");
             }
-            System.out.println();
         }
     }
     public static void printMap() {
@@ -88,7 +85,6 @@ public class ticTacToe {
         }while( ! isCellVallid(x,y));
         map [y] [x] = DOT_X;
     }
-
     private static boolean isCellVallid(int x, int y) {
         if(x<0|| x>=SIZE || y<0|| y>= SIZE)return false;
         if(map [y] [x] == DOT_EMPTY) return true;
